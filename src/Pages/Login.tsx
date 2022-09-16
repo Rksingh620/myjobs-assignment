@@ -43,13 +43,16 @@ const Login = (props: Props) => {
           errorMessage={passwordError}
           // required
         />
-        <Button
-          label="Login"
-          type="submit"
-          radius="md"
-          loadingLabel={isLogging ? "Logging in" : undefined}
-          className="px-10 bg-blue text-white font-semibold mt-6 mx-auto rounded"
-        />
+        {
+          <Button
+            label="Login"
+            type="submit"
+            radius="md"
+            isLoading={isLogging}
+            loadingLabel={isLogging ? "Logging in" : undefined}
+            className="px-10 bg-blue text-white font-semibold mt-6 mx-auto rounded"
+          />
+        }
       </form>
     </div>
   );

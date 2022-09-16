@@ -18,6 +18,8 @@ const Dashboard = () => {
     totalPages,
     setActivePage,
     activePage,
+    isCandidateLoading,
+    jobsLoading,
   } = useDashboard();
   return (
     <>
@@ -28,7 +30,9 @@ const Dashboard = () => {
       <h3 className="text-[22px] text-white py-6">Jobs posted by you</h3>
 
       <div className="flex gap-4 flex-wrap w-full">
-        {allJobs?.length === 0 ? (
+        {jobsLoading ? (
+          <p className="text-center font-semibold">Loading Jobs...</p>
+        ) : allJobs?.length === 0 ? (
           <div className="h-[60vh] flex justify-center w-full">
             <div
               className={` h-full flex flex-col gap-10 items-center justify-center`}
@@ -102,7 +106,11 @@ const Dashboard = () => {
             <p className="text-15 pb-2">
               Total {candidatesByJob?.length} applicants
             </p>
-            {candidatesByJob?.length === 0 ? (
+            {isCandidateLoading ? (
+              <p className="text-center font-semibold">
+                Loading Job Applications...
+              </p>
+            ) : candidatesByJob?.length === 0 ? (
               <div className="h-[60vh] sm:w-[35vw]">
                 <Empty label="No applications available!" />
               </div>

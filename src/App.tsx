@@ -42,7 +42,7 @@ function App() {
   const darkBgHeight = useMemo(() => {
     let path = location?.pathname;
     return path === "/"
-      ? "h-[50vh]"
+      ? "h-[58vh]"
       : path === "/login"
       ? "h-[40vh]"
       : "h-[30vh]";
