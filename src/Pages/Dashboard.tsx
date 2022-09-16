@@ -1,4 +1,3 @@
-import React, { useMemo, useState } from "react";
 import home from "../Assets/home.svg";
 import Button from "../Components/Button";
 import JobCard from "../Components/JobCard";
@@ -10,13 +9,9 @@ import Empty from "../Components/Empty";
 import caretNext from "../Assets/caret-next.svg";
 import caretPrev from "../Assets/caret-prev.svg";
 
-type Props = {};
-
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
   const {
-    jobsLoading,
     allJobs,
-    jobsMeta,
     setSelectedJob,
     selectedJob,
     candidatesByJob,

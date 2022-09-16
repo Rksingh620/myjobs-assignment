@@ -4,7 +4,7 @@ import { getJobById, getJobList } from "../Apis/Api";
 import { TypeCandidate, TypeJobResponse } from "../types";
 
 const useDashboard = () => {
-  const isFirstLoad = useRef(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [allJobs, setAllJobs] = useState<TypeJobResponse[]>([]);
   const [jobsMeta, setJobsMeta] = useState<{ count: number; limit: number }>();
   const [jobsLoading, setJobsLoading] = useState<boolean>(false);
@@ -50,8 +50,8 @@ const useDashboard = () => {
     setIsCandidateLoading(false);
   };
   useEffect(() => {
-    if (isFirstLoad.current) {
-      isFirstLoad.current = false;
+    if (isFirstLoad) {
+      setIsFirstLoad(false);
     } else {
       getAllJobs(activePage !== 0 ? activePage + 1 : undefined);
     }
