@@ -1,0 +1,13 @@
+.logout-btn {
+  @apply bg-white  rounded  p-3 px-6 relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background-color: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid white;
+  }
+}
