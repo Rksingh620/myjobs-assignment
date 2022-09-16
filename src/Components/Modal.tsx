@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, position, title, body, footer }: Props) => {
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none pb-6">
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">{title}</h3>
+                  <h3 className="text-19 font-semibold">{title}</h3>
                   <img
                     src={require("../Assets/cross_icon.svg").default}
                     alt="close icon"

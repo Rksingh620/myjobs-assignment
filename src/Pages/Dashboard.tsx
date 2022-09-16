@@ -30,7 +30,7 @@ const Dashboard = (props: Props) => {
         <img src={home} alt="home" />
         <span className="text-white text-xs">Home</span>
       </div>
-      <h3 className="text-2xl text-white py-6">Jobs posted by you</h3>
+      <h3 className="text-[22px] text-white py-6">Jobs posted by you</h3>
 
       <div className="flex gap-4 flex-wrap w-full">
         {allJobs?.length === 0 ? (
@@ -59,40 +59,42 @@ const Dashboard = (props: Props) => {
           ))
         )}
       </div>
-      <div className="flex gap-3 mt-6 items-center">
-        <img
-          src={caretPrev}
-          onClick={() => {
-            if (activePage !== 0) {
-              setActivePage((prev) => prev - 1);
-            }
-          }}
-          className="cursor-pointer"
-        />
-        {Array(totalPages)
-          .fill("")
-          .map((_, i) => (
-            <p
-              onClick={() => {
-                setActivePage(i);
-              }}
-              className={`${
-                i === activePage ? "bg-light rounded" : ""
-              } px-2 cursor-pointer`}
-            >
-              {i + 1}
-            </p>
-          ))}
-        <img
-          src={caretNext}
-          onClick={() => {
-            if (activePage < totalPages - 1) {
-              setActivePage((prev) => prev + 1);
-            }
-          }}
-          className="cursor-pointer"
-        />
-      </div>
+      {totalPages && totalPages > 0 && (
+        <div className="flex gap-3 mt-6 items-center w-full justify-center">
+          <img
+            src={caretPrev}
+            onClick={() => {
+              if (activePage !== 0) {
+                setActivePage((prev) => prev - 1);
+              }
+            }}
+            className="cursor-pointer"
+          />
+          {Array(totalPages)
+            .fill("")
+            .map((_, i) => (
+              <p
+                onClick={() => {
+                  setActivePage(i);
+                }}
+                className={`${
+                  i === activePage ? "bg-light rounded " : ""
+                } px-2 cursor-pointer font-bold text-sm`}
+              >
+                {i + 1}
+              </p>
+            ))}
+          <img
+            src={caretNext}
+            onClick={() => {
+              if (activePage < totalPages - 1) {
+                setActivePage((prev) => prev + 1);
+              }
+            }}
+            className="cursor-pointer"
+          />
+        </div>
+      )}
       <Modal
         isOpen={!!selectedJob}
         onClose={() => {
@@ -101,15 +103,15 @@ const Dashboard = (props: Props) => {
         position="top"
         body={
           <div className=" px-4 py-2">
-            <p className="text-lg pb-2">
+            <p className="text-15 pb-2">
               Total {candidatesByJob?.length} applicants
             </p>
             {candidatesByJob?.length === 0 ? (
               <div className="h-[60vh] sm:w-[35vw]">
-                <Empty label="No applicants available!" />
+                <Empty label="No applications available!" />
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 grid-cols-1 gap-8 bg-light2 p-2">
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-6 bg-light2 rounded p-2">
                 {candidatesByJob?.map((candidate, index) => (
                   <ApplicantCard
                     key={candidate?.id}

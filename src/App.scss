@@ -1,5 +1,5 @@
 .logout-btn {
-  @apply bg-white  rounded  p-3 px-6 relative;
+  @apply bg-white rounded p-3 w-24 relative text-sm font-semibold text-start;
   &::before {
     content: "";
     position: absolute;

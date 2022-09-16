@@ -17,7 +17,7 @@ const NavBar = (props: Props) => {
       border-b border-light md:mx-[70px] mx-5 "
       >
         <h1
-          className="text-2xl text-white font-bold cursor-pointer"
+          className="text-22 text-white font-bold cursor-pointer"
           onClick={() => navigate("/")}
         >
           My<span className="text-blue">Jobs</span>

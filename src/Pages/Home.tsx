@@ -11,12 +11,12 @@ const Home = (props: Props) => {
   const id = useId();
   return (
     <div className="">
-      <div className="flex justify-between flex-wrap md:mt-16 mt-8">
-        <div className="mt-6">
-          <div className="py-2 text-white flex flex-col flex-wrap justify-between gap-12">
+      <div className="flex justify-between flex-wrap md:mt-16 mt-6">
+        <div className="mt-4">
+          <div className="py-2  flex flex-col flex-wrap justify-between gap-12">
             <div>
-              <h1 className="text-6xl font-bold">Welcome to </h1>
-              <h1 className="text-6xl font-bold">
+              <h1 className="text-6xl font-bold text-white">Welcome to </h1>
+              <h1 className="text-6xl font-bold text-white">
                 My<span className="text-blue">Jobs</span>
               </h1>
             </div>
@@ -28,8 +28,8 @@ const Home = (props: Props) => {
         </div>
         <img src={heroImage} className="w-full md:w-[522px]" />
       </div>
-      <div className="md:mt-24 mt-12">
-        <h3 className="text-2xl">Why us</h3>
+      <div className="md:mt-20 mt-10">
+        <h3 className="text-22">Why us</h3>
         <div className="flex gap-10 flex-col md:flex-row mt-8">
           <FeatureCard
             title="Get More Visibility"
@@ -52,8 +52,8 @@ const Home = (props: Props) => {
         </div>
       </div>
 
-      <div className="md:mt-24 mt-12">
-        <h3 className="text-2xl">Companies Who Trust Us</h3>
+      <div className="md:mt-20 mt-10">
+        <h3 className="text-22">Companies Who Trust Us</h3>
         <div className="flex flex-wrap gap-10 py-6 justify-center">
           {[
             "goldline",

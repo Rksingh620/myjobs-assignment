@@ -23,7 +23,7 @@ const Login = (props: Props) => {
         }}
         className="mx-3 md:mx-0 lg:w-2/5 w-full min-h-[50vh] bg-white p-4 rounded-xl shadow-xl flex flex-col"
       >
-        <h2 className="text-2xl font-semibold">Login</h2>
+        <h2 className="text-22 font-semibold">Login</h2>
         <Input
           type="email"
           value={email}

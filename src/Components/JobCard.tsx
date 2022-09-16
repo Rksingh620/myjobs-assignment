@@ -10,19 +10,19 @@ type Props = {
 };
 const JobCard = (props: Props) => {
   return (
-    <div className=" shadow-sm p-3 rounded-lg border border-gray-300 bg-white md:w-[300px] w-full flex flex-col">
-      <h3 className="text-xl font-semibold break-words">{props.title}</h3>
-      <p className="break-words">{props.subtitle}</p>
+    <div className=" shadow-sm p-3 rounded-lg border border-gray-300 bg-white md:w-[260px] w-full flex flex-col">
+      <h3 className="text-17 font-semibold break-words">{props.title}</h3>
+      <p className="break-words text-sm">{props.subtitle}</p>
       <div className="flex items-center gap-4 justify-between mt-auto">
         <div className="flex items-center  gap-2">
           <img src={location} alt={props.location} />
-          <p className="font-semibold">
+          <p className="font-semibold text-sm">
             {props.location.slice(0, 7)}
             {props.location?.length > 7 ? ".." : ""}
           </p>
         </div>
         <button
-          className="bg-light text-light-dark font-semibold h-10 min-h-max p-2 rounded"
+          className="bg-light text-light-dark font-semibold h-10 min-h-max p-2 rounded text-xs"
           onClick={props.onSelect}
         >
           View Applications
