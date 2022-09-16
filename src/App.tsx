@@ -8,7 +8,7 @@ import RootRoute from "./utils/Routes";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
-  const { token, isLoggedIn, onLogout } = useContext(AuthContext);
+  const { token, isLoggedIn, onLogout, user } = useContext(AuthContext);
   const location = useLocation();
 
   // axios.defaults.baseURL = "https://jobs-api.squareboat.info/api/v1/";
@@ -30,9 +30,11 @@ function App() {
       console.error("Error Response:", err.response);
     }
     if (err?.response?.status === 401) {
-      toast.error(err?.response?.data?.message);
+      // toast.error(err?.response?.data?.message);
       setTimeout(() => {
-        onLogout();
+        if (user) {
+          onLogout();
+        }
       }, 3000);
     }
     return Promise.reject(err);
