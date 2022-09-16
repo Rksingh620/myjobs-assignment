@@ -11,7 +11,8 @@ function App() {
   const { token, isLoggedIn, onLogout } = useContext(AuthContext);
   const location = useLocation();
 
-  axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+  axios.defaults.baseURL = "https://jobs-api.squareboat.info/api/v1/";
+  // axios.defaults.baseURL = process.env.REACT_APP_API_URL;
   axios.interceptors.request.use(
     (config) => {
       if (config.headers && !config?.url?.includes("Auth") && token) {

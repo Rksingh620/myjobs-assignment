@@ -59,7 +59,7 @@ const Dashboard = (props: Props) => {
           ))
         )}
       </div>
-      {totalPages && totalPages > 0 && (
+      {totalPages > 0 && (
         <div className="flex gap-3 mt-6 items-center w-full justify-center">
           <img
             src={caretPrev}
@@ -74,6 +74,7 @@ const Dashboard = (props: Props) => {
             .fill("")
             .map((_, i) => (
               <p
+                key={i}
                 onClick={() => {
                   setActivePage(i);
                 }}
